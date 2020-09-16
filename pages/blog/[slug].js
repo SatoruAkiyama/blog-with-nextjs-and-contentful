@@ -7,23 +7,9 @@ import BlogBody from "components/BlogBody";
 import MorePost from "components/MorePost";
 import ShareButton from "components/ShareButton";
 
-import {
-  getAllBlogs,
-  getBlogBySlug,
-  getMoreBlogs,
-  getAllBlogsWithSlug,
-} from "lib/index";
+import { getBlogBySlug, getMoreBlogs, getAllBlogsWithSlug } from "lib/index";
 
 import { Container, Grid, Typography } from "@material-ui/core";
-
-// export async function getStaticPaths() {
-//   const blogs = await getAllBlogs();
-//   const paths = blogs?.map(({ slug }) => ({ params: { slug: `${slug}` } }));
-//   return {
-//     paths: paths ? paths : null,
-//     fallback: true,
-//   };
-// }
 
 export async function getStaticPaths() {
   const allBlogs = await getAllBlogsWithSlug();
@@ -57,7 +43,7 @@ const Blog = ({ blog, moreBlogs }) => {
       title={blog?.fields.title}
       description={blog?.fields.subTitle}
       ogImage={blog?.fields.coverImage.fields.file.url}
-      url={`https://blog-with-nextjs-and-contentful.vercel.app/blog/${blog?.fields.slug}}`}
+      url={`https://blog-with-nextjs-and-contentful.vercel.app/blog/${blog?.fields.slug}`}
     >
       <BlogHeader
         title={blog?.fields.title}

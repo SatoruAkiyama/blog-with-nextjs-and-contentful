@@ -192,6 +192,8 @@ const Header = () => {
                     style={{
                       height: "27px",
                       width: "27px",
+                      position: "relative",
+                      zIndex: 100,
                     }}
                   />
                 </Grid>

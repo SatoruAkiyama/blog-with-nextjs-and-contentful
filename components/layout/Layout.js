@@ -8,6 +8,8 @@ const Layout = ({ children, title, description, ogImage, url }) => {
   const pageUrl = "https://blog-with-nextjs-and-contentful.vercel.app/";
   // when you share this page on facebook you'll see this image
   const ogImg = "/blog-demo-min.png";
+  // google site vertification
+  const GOOGLE_SITE_VERTIFICATION = process.env.GOOGLE_SITE_VERTIFICATION;
   return (
     <>
       <Head>
@@ -15,9 +17,17 @@ const Layout = ({ children, title, description, ogImage, url }) => {
         <meta
           name="description"
           key="description"
-          content={description ? description : "This is a blog"}
+          content={
+            description
+              ? description
+              : "This is a statically generated blog example using Next.js and Contentful."
+          }
         />
-        <meta property="og:title" content={title} key="og:title" />
+        <meta
+          property="og:title"
+          content={title ? title : "Blog"}
+          key="og:title"
+        />
         <meta property="og:url" content={url ? url : pageUrl} key="og:url" />
         <meta
           property="og:image"
@@ -26,8 +36,16 @@ const Layout = ({ children, title, description, ogImage, url }) => {
         />
         <meta
           property="og:description"
-          content={description}
+          content={
+            description
+              ? description
+              : "This is a statically generated blog example using Next.js and Contentful."
+          }
           key="og:description"
+        />
+        <meta
+          name="google-site-verification"
+          content={GOOGLE_SITE_VERTIFICATION}
         />
       </Head>
       <Header />
