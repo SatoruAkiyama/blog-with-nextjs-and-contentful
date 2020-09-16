@@ -7,15 +7,28 @@ import BlogBody from "components/BlogBody";
 import MorePost from "components/MorePost";
 import ShareButton from "components/ShareButton";
 
-import { getAllBlogs, getBlogBySlug, getMoreBlogs } from "lib/index";
+import {
+  getAllBlogs,
+  getBlogBySlug,
+  getMoreBlogs,
+  getAllBlogsWithSlug,
+} from "lib/index";
 
 import { Container, Grid, Typography } from "@material-ui/core";
 
+// export async function getStaticPaths() {
+//   const blogs = await getAllBlogs();
+//   const paths = blogs?.map(({ slug }) => ({ params: { slug: `${slug}` } }));
+//   return {
+//     paths: paths ? paths : null,
+//     fallback: true,
+//   };
+// }
+
 export async function getStaticPaths() {
-  const blogs = await getAllBlogs();
-  const paths = blogs?.map(({ slug }) => ({ params: { slug: `${slug}` } }));
+  const allBlogs = await getAllBlogsWithSlug();
   return {
-    paths,
+    paths: allBlogs?.map(({ slug }) => `/blog/${slug}`) ?? [],
     fallback: true,
   };
 }
@@ -24,7 +37,10 @@ export async function getStaticProps({ params }) {
   const blog = await getBlogBySlug(params.slug);
   const moreBlogs = await getMoreBlogs(params.slug);
   return {
-    props: { blog, moreBlogs },
+    props: {
+      blog: blog ? blog : null,
+      moreBlogs: moreBlogs ? moreBlogs : null,
+    },
     revalidate: 1,
   };
 }
