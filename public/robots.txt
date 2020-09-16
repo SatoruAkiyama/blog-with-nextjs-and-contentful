@@ -1,0 +1,3 @@
+User-agent: *
+Sitemap: https://blog-with-nextjs-and-contentful.vercel.app/sitemap_local.xml
+Disallow:
