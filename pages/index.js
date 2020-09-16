@@ -1,4 +1,4 @@
-import Post from "components/post";
+import Post from "components/Post";
 import Layout from "components/layout/Layout";
 import PageHeader from "components/PageHeader";
 
