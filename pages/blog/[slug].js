@@ -69,7 +69,7 @@ const Blog = ({ blog, moreBlogs }) => {
               - Share -
             </Typography>
             <ShareButton
-              url={`https://blog-with-nextjs-and-contentful.vercel.app/blog/${blog?.fields.slug}}`}
+              url={`https://blog-with-nextjs-and-contentful.vercel.app/blog/${blog?.fields.slug}`}
             />
           </Grid>
         </Grid>

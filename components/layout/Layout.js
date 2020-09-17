@@ -20,7 +20,7 @@ const Layout = ({ children, title, description, ogImage, url }) => {
           content={
             description
               ? description
-              : "This is a statically generated blog example using Next.js and Contentful."
+              : "This is a statically generated blog example using Next.js and Contentful. | Blog with React/Next.js and Contentful"
           }
         />
         <meta
@@ -57,6 +57,7 @@ const Layout = ({ children, title, description, ogImage, url }) => {
           body {
             background: #f9f9f9;
             overflow-x: hidden;
+            padding: 0 !important;
           }
           #__next {
             min-height: 100vh;
