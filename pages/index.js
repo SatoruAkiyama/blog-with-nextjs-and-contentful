@@ -4,10 +4,10 @@ import PageHeader from "components/PageHeader";
 
 import { Container, Grid } from "@material-ui/core";
 
-import { getAllBlogs } from "lib/index";
+import { getAllPosts } from "lib/index";
 
 export async function getStaticProps() {
-  const posts = await getAllBlogs();
+  const posts = await getAllPosts();
   return { revalidate: 1, props: { posts } };
 }
 

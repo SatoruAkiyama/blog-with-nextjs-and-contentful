@@ -40,7 +40,7 @@ const PageHeader = () => {
           <a
             target="_blank"
             rel="noreferrer noopener"
-            href="https://github.com/SatoruAkiyama/blog-with-Next.js-and-Contentful"
+            href="https://github.com/SatoruAkiyama/blog-with-nextjs-and-contentful"
             className={classes.link}
           >
             here

@@ -7,54 +7,54 @@ import BlogBody from "components/BlogBody";
 import MorePost from "components/MorePost";
 import ShareButton from "components/ShareButton";
 
-import { getBlogBySlug, getMoreBlogs, getAllBlogsWithSlug } from "lib/index";
+import { getPostBySlug, getMorePosts, getAllPostsWithSlug } from "lib/index";
 
 import { Container, Grid, Typography } from "@material-ui/core";
 
 export async function getStaticPaths() {
-  const allBlogs = await getAllBlogsWithSlug();
+  const allPosts = await getAllPostsWithSlug();
   return {
-    paths: allBlogs?.map(({ slug }) => `/blog/${slug}`) ?? [],
+    paths: allPosts?.map(({ slug }) => `/blog/${slug}`) ?? [],
     fallback: true,
   };
 }
 
 export async function getStaticProps({ params }) {
-  const blog = await getBlogBySlug(params.slug);
-  const moreBlogs = await getMoreBlogs(params.slug);
+  const post = await getPostBySlug(params.slug);
+  const morePosts = await getMorePosts(params.slug);
   return {
     props: {
-      blog: blog ? blog : null,
-      moreBlogs: moreBlogs ? moreBlogs : null,
+      post: post ? post : null,
+      morePosts: morePosts ? morePosts : null,
     },
     revalidate: 1,
   };
 }
 
-const Blog = ({ blog, moreBlogs }) => {
+const Blog = ({ post, morePosts }) => {
   const router = useRouter();
 
-  if (!router.isFallback && !blog) {
+  if (!router.isFallback && !post) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
     <Layout
-      title={blog?.fields.title}
-      description={blog?.fields.subTitle}
-      ogImage={blog?.fields.coverImage.fields.file.url}
-      url={`https://blog-with-nextjs-and-contentful.vercel.app/blog/${blog?.fields.slug}`}
+      title={post?.fields.title}
+      description={post?.fields.subTitle}
+      ogImage={post?.fields.coverImage.fields.file.url}
+      url={`https://blog-with-nextjs-and-contentful.vercel.app/blog/${post?.fields.slug}`}
     >
       <BlogHeader
-        title={blog?.fields.title}
-        subtitle={blog?.fields.subTitle}
-        authorName={blog?.fields.author.fields.name}
-        authorImage={blog?.fields.author.fields.image.fields.file.url}
-        slug={blog?.fields.slug}
-        date={blog?.fields.date}
-        coverImage={blog?.fields.coverImage.fields.file.url}
+        title={post?.fields.title}
+        subtitle={post?.fields.subTitle}
+        authorName={post?.fields.author.fields.name}
+        authorImage={post?.fields.author.fields.image.fields.file.url}
+        slug={post?.fields.slug}
+        date={post?.fields.date}
+        coverImage={post?.fields.coverImage.fields.file.url}
       />
-      <BlogBody content={blog?.fields.content} />
+      <BlogBody content={post?.fields.content} />
       <Container maxWidth="lg" style={{ marginTop: "8em" }}>
         <Grid container direction="column" alignItems="center">
           <Grid item>
@@ -69,7 +69,7 @@ const Blog = ({ blog, moreBlogs }) => {
               - Share -
             </Typography>
             <ShareButton
-              url={`https://blog-with-nextjs-and-contentful.vercel.app/blog/${blog?.fields.slug}`}
+              url={`https://blog-with-nextjs-and-contentful.vercel.app/blog/${post?.fields.slug}`}
             />
           </Grid>
         </Grid>
@@ -86,7 +86,7 @@ const Blog = ({ blog, moreBlogs }) => {
           - Recent Entries -
         </Typography>
         <Grid container spacing={4} justify="center">
-          {moreBlogs?.map(({ fields }) => (
+          {morePosts?.map(({ fields }) => (
             <Grid item key={fields.slug} xs={12} md={4}>
               <Grid container>
                 <MorePost

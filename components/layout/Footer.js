@@ -5,13 +5,8 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import { Container, Grid, Typography } from "@material-ui/core";
 
-import InstagramIcon from "@material-ui/icons/Instagram";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import HomeIcon from "@material-ui/icons/Home";
-
 import { routes } from "data/routes";
-import { socialMedia } from "data/socialMedia";
+import Social from "components/Social";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -21,19 +16,6 @@ const useStyles = makeStyles((theme) => ({
     overflow: "hidden",
     marginTop: "6em",
     padding: "2em 0 ",
-  },
-  snsIcon: {
-    width: "30px",
-    height: "30px",
-    color: "white",
-
-    [theme.breakpoints.down("xs")]: {
-      width: "25px",
-      height: "25px",
-    },
-    "&:hover": {
-      color: theme.palette.info.main,
-    },
   },
   link: {
     fontSize: "1.25em",
@@ -55,20 +37,6 @@ const Footer = () => {
   const classes = useStyles();
   const path = routes;
   const router = useRouter();
-  // if you want to add more social medias, add it to here and /data/socialMedia.js.
-  // and import the Material Icon, then add the code.
-  {
-    /* <Grid
-          item
-          component={"a"}
-          target="_blank"
-          rel="noreferrer noopener"
-          href={social media which you add}
-        >
-          <Icon( which you add ) className={classes.snsIcon} />
-      </Grid> */
-  }
-  const { instagram, facebook, github, homepage } = socialMedia;
   return (
     <footer className={classes.footer}>
       <Container maxWidth="lg">
@@ -91,45 +59,7 @@ const Footer = () => {
           ))}
         </Grid>
         <Grid container direction="column" style={{ margin: "1.2em 0" }}>
-          <Grid container justify="center" spacing={2}>
-            <Grid
-              item
-              component={"a"}
-              target="_blank"
-              rel="noreferrer noopener"
-              href={homepage}
-            >
-              <HomeIcon className={classes.snsIcon} />
-            </Grid>
-            <Grid
-              item
-              component={"a"}
-              target="_blank"
-              rel="noreferrer noopener"
-              href={facebook}
-            >
-              <FacebookIcon className={classes.snsIcon} />
-            </Grid>
-            <Grid
-              item
-              component={"a"}
-              target="_blank"
-              rel="noreferrer noopener"
-              href={instagram}
-            >
-              <InstagramIcon className={classes.snsIcon} />
-            </Grid>
-            <Grid
-              item
-              component={"a"}
-              target="_blank"
-              rel="noreferrer noopener"
-              href={github}
-            >
-              <GitHubIcon className={classes.snsIcon} />
-            </Grid>
-            {/* add social media*/}
-          </Grid>
+          <Social />
         </Grid>
         <Grid
           item

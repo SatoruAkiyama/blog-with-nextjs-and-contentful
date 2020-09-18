@@ -43,10 +43,6 @@ const Layout = ({ children, title, description, ogImage, url }) => {
           }
           key="og:description"
         />
-        <meta
-          name="google-site-verification"
-          content={GOOGLE_SITE_VERTIFICATION}
-        />
       </Head>
       <Header />
       <main>{children}</main>

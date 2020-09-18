@@ -6,7 +6,7 @@
 export const socialMedia = {
   instagram: "https://www.instagram.com/developer_satoru_akiyama/",
   facebook: "https://www.facebook.com/satoruakiyama1998",
-  github: "https://github.com/SatoruAkiyama/blog-with-Next.js-and-Contentful",
+  github: "https://github.com/SatoruAkiyama/blog-with-nextjs-and-contentful",
   homepage: "https://satoruakiyama.com",
   // twitter: "https://twitter.com", like this
 };
