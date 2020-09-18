@@ -11,17 +11,23 @@ import {
 
 const ShareButton = ({ url }) => (
   <>
-    <FacebookShareButton url={url}>
+    <FacebookShareButton url={url} style={{ outline: "none" }}>
       {/* <span style={{ fontSize: `22px`, color: `#fff` }}>SHARE</span>{" "} */}
       <FacebookIcon size="32px" round />
     </FacebookShareButton>
-    <TwitterShareButton url={url} style={{ marginLeft: `15px` }}>
+    <TwitterShareButton
+      url={url}
+      style={{ marginLeft: `15px`, outline: "none" }}
+    >
       <TwitterIcon size="32px" round />
     </TwitterShareButton>
-    <WhatsappShareButton url={url} style={{ marginLeft: `15px` }}>
+    <WhatsappShareButton
+      url={url}
+      style={{ marginLeft: `15px`, outline: "none" }}
+    >
       <WhatsappIcon size="32px" round />
     </WhatsappShareButton>
-    <LineShareButton url={url} style={{ marginLeft: `15px` }}>
+    <LineShareButton url={url} style={{ marginLeft: `15px`, outline: "none" }}>
       <LineIcon size="32px" round />
     </LineShareButton>
   </>
