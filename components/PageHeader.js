@@ -58,7 +58,7 @@ const PageHeader = () => {
           <a
             target="_blank"
             rel="noreferrer noopener"
-            href="https://satoruakiyama.com/blog/building-blog-with-nextjs-and-contentful-en-ja"
+            href="https://satoruakiyama.com/blog/building-blog-with-nextjs-and-contentful-ja"
             className={classes.link}
           >
             Japanese
