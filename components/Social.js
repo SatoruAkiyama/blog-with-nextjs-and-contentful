@@ -5,6 +5,8 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import HomeIcon from "@material-ui/icons/Home";
+// if you wanto to add twitter
+// import TwitterIcon from '@material-ui/icons/Twitter';
 
 import { socialMedia } from "data/socialMedia";
 
@@ -12,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
   snsIcon: {
     width: "30px",
     height: "30px",
-    // color: theme.palette.primary.main,
 
     [theme.breakpoints.down("xs")]: {
       width: "25px",
@@ -30,17 +31,19 @@ const Social = ({ color }) => {
   // and import the Material Icon, then add the code.
   const { instagram, facebook, github, homepage } = socialMedia;
 
+  // if you add twitter , it will be
+  // const { instagram, facebook, github, homepage, twitter } = socialMedia;
   {
-    //  you can add Icon like this
+    //  and add this code to line 98,
     /* <Grid
-          item
-          component={"a"}
-          target="_blank"
-          rel="noreferrer noopener"
-          href={social media which you add}
-        >
-          <Icon( which you add ) className={classes.snsIcon} />
-      </Grid> */
+        item
+        component={"a"}
+        target="_blank"
+        rel="noreferrer noopener"
+        href={twitter}
+      >
+       <TwitterIcon className={classes.snsIcon} />
+    </Grid> */
   }
   return (
     <Grid item container spacing={2} justify="center">
