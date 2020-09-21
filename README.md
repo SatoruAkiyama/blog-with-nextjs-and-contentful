@@ -25,7 +25,7 @@ npm install
 
 # Author
 
-Satoru Akiyama
+Satoru Akiyama(https://satoruakiyama.com)
 
 # License
 
