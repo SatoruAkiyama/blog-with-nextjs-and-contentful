@@ -10,9 +10,9 @@ Live site(https://blog-with-nextjs-and-contentful.vercel.app/)
 
 # How to use
 
-You can see details of how to make a blog with this code. (https://satoruakiyama.com/blog/building-blog-with-nextjs-and-contentful-en)
+You can see details of how to make a blog with this code. (https://portfolio-satoruakiyama.vercel.app/blog/building-blog-with-nextjs-and-contentful-en)
 
-ここで、詳しくブログの作り方を解説しています。 (https://satoruakiyama.com/blog/building-blog-with-nextjs-and-contentful-ja)
+ここで、詳しくブログの作り方を解説しています。 (https://portfolio-satoruakiyama.vercel.app/blog/building-blog-with-nextjs-and-contentful-ja)
 
 First you need to make a [Contentful account](https://www.contentful.com/sign-up/).
 Then, download the example [or clone the repo](https://github.com/SatoruAkiyama/blog-with-nextjs-and-contentful):
@@ -25,7 +25,7 @@ npm install
 
 # Author
 
-Satoru Akiyama(https://satoruakiyama.com)
+Satoru Akiyama(https://portfolio-satoruakiyama.vercel.app)
 
 # License
 
