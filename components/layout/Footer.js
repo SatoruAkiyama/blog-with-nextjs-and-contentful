@@ -67,7 +67,7 @@ const Footer = () => {
           component={"a"}
           target="_blank"
           rel="noreferrer noopener"
-          href="https://satoruakiyama.com"
+          href="https://personal-website-satoru-akiyamas-projects.vercel.app/"
           justify="center"
           style={{
             textDecoration: "none",
