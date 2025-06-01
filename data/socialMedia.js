@@ -7,7 +7,7 @@ export const socialMedia = {
   instagram: "",
   facebook: "",
   github: "https://github.com/SatoruAkiyama/blog-with-nextjs-and-contentful",
-  homepage: "https://personal-website-satoru-akiyamas-projects.vercel.app/",
+  homepage: "https://satoru-akiyama.vercel.app",
   // You can add like this
   // twitter: "https://twitter.com",
 };

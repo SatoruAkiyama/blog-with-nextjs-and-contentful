@@ -25,7 +25,7 @@ npm install
 
 # Author
 
-Satoru Akiyama(https://portfolio-satoruakiyama.vercel.app)
+[Satoru Akiyama](https://satoru-akiyama.vercel.app)
 
 # License
 
